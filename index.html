@@ -197,7 +197,7 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:0.9rem}
 
 @keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
 
-@media (max-width:880px){.split{grid-template-columns:1fr}.hero-title{font-size:4.2rem}.hero-inner{padding:28px}}
+@media (max-width:880px){.hero-title{font-size:4.2rem}.hero-inner{padding:28px}}
 @media (max-width:420px){.nav{padding:12px 14px}.brand .title{font-size:1.35rem}.hero-title{font-size:3.2rem}.nav .links{display:none}}
 </style>
 </head>
@@ -207,22 +207,22 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:0.9rem}
 <div class="rose-floating rose-float-2">🌹</div>
 <div class="rose-floating rose-float-3">🌹</div>
 
-<nav class="nav" role="navigation" aria-label="Main navigation">
+<nav class="nav">
   <div class="brand">
     <div class="title">GlowWave</div>
     <div class="tag">Youth Magazine • Culture • Style</div>
   </div>
-  <div class="links" role="menubar" aria-label="Primary">
-    <a href="#home" role="menuitem">Home</a>
-    <a href="#about" role="menuitem">About</a>
-    <a href="#magazines" role="menuitem">Magazines</a>
-    <a href="#contact" role="menuitem">Contact</a>
+  <div class="links">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#magazines">Magazines</a>
+    <a href="#contact">Contact</a>
   </div>
 </nav>
 
-<header class="hero" id="home" aria-labelledby="hero-heading">
-  <div class="hero-inner" role="banner">
-    <h1 class="hero-title" id="hero-heading">GlowWave</h1>
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <h1 class="hero-title">GlowWave</h1>
     <div class="hero-sub">Dark bloom, soft voices — a youth magazine for mood, style & stories.</div>
     <div class="hero-cta">
       <a class="btn" href="#magazines">Dive Into Magazines</a>
@@ -233,17 +233,17 @@ footer{padding:28px 0;text-align:center;color:var(--muted);font-size:0.9rem}
 
 <main>
   <section class="container">
-    <div class="panel" id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Us</h2>
+    <div class="panel" id="about">
+      <h2>About Us</h2>
       <p class="lead">GlowWave is a youth-led magazine exploring fashion, culture, music, and creative life. We publish monthly themes, interviews, and art celebrating bold voices and moody aesthetics. All pieces are curated by teens — for teens.</p>
     </div>
 
     <!-- Three cards below About Us -->
-    <div class="card-row">
+    <div class="card-row" id="magazines">
       <div class="card">
         <h3>Latest Issue</h3>
         <p>Access all magazines and archives from one place.</p>
-        <a class="btn" href="https://drive.google.com/drive/folders/17ypRo5Zi_GZRIAsVAxH7CQB8t2z1WF65?usp=sharing" target="_blank" rel="noopener">Open Magazine Folder</a>
+        <a class="btn" href="https://mega.nz/folder/0QsBXRbI#40CYOFLnfDR72SdQYIhiuA" target="_blank" rel="noopener">Open Magazine Folder</a>
       </div>
 
       <div class="card">
@@ -284,16 +284,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth',block:'start'}); }
   });
 });
-function updateRoses(){
-  const w = window.innerWidth;
-  document.querySelectorAll('.rose-floating').forEach((el,i)=>{
-    if(w < 420) el.style.opacity = '0.06';
-    else if(w < 880) el.style.opacity = i===1? '0.08':'0.06';
-    else el.style.opacity = '0.12';
-  });
-}
-updateRoses();
-window.addEventListener('resize', updateRoses);
 </script>
 </body>
 </html>
+
